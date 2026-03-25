@@ -1,4 +1,4 @@
-etworks:
+networks:
   network-games:
     driver: bridge
     internal: true
