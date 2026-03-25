@@ -1,10 +1,17 @@
+name: mcsmanager
+
 networks:
   network-games:
+    name: mcsmanager_network-games
     driver: bridge
     internal: true
+
   network-panel:
+    name: mcsmanager_network-panel
     driver: bridge
+
   network-playit:
+    name: mcsmanager_network-playit
     driver: bridge
 
 services:
@@ -29,6 +36,8 @@ services:
     image: githubyumao/mcsmanager-web:latest
     container_name: mcsm-web
     restart: unless-stopped
+    depends_on:
+      - mcsm-daemon
     ports:
       - "23333:23333"
     volumes:
