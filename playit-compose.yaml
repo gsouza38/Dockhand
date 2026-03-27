@@ -1,0 +1,8 @@
+services:
+  playit:
+    image: ghcr.io/playit-cloud/playit-agent:0.17
+    container_name: playit-tunnel
+    restart: unless-stopped
+    environment:
+      - SECRET_KEY=${SECRET_KEY}
+    network_mode: host
